@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace MVCFastTactsoft.Data.Migrations
+namespace MVCFastTactsoft.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230113130053_CreateRegistrationTable")]
-    partial class CreateRegistrationTable
+    [Migration("20230113151623_addRegistrationTble")]
+    partial class addRegistrationTble
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

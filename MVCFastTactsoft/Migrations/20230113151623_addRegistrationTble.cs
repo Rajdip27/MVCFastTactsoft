@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace MVCFastTactsoft.Data.Migrations
+namespace MVCFastTactsoft.Migrations
 {
-    public partial class CreateRegistrationTable : Migration
+    public partial class addRegistrationTble : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
