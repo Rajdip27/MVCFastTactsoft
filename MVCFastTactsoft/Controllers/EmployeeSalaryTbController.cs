@@ -36,5 +36,87 @@ namespace MVCFastTactsoft.Controllers
                 return View(salaryTb);
             }
         }
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            try
+            {
+                var Result=await _dbContext.EmployeeSalaryTbs.FindAsync(id);
+                return View(Result);
+
+            }catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, EmployeeSalaryTb salaryTb)
+        {
+            try
+            {
+                if(id!= salaryTb.Id)
+                {
+                    return NotFound();
+                }
+                _dbContext.Entry(salaryTb).State = EntityState.Modified;
+                await _dbContext.SaveChangesAsync();
+                return RedirectToAction(actionName: (nameof(Index)));
+
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            try
+            {
+                var Result = await _dbContext.EmployeeSalaryTbs.FindAsync(id);
+                return View(Result);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                var Result = await _dbContext.EmployeeSalaryTbs.FindAsync(id);
+                return View(Result);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id, EmployeeSalaryTb salaryTb)
+        {
+            try
+            {
+                if(id != salaryTb.Id)
+                {
+                    return NotFound();
+                }
+                _dbContext.Entry(salaryTb).State = EntityState.Deleted;
+                await _dbContext.SaveChangesAsync();
+                return RedirectToAction(actionName: (nameof(Index)));
+
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
