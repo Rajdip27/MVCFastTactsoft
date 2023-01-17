@@ -15,6 +15,7 @@ namespace MVCFastTactsoft.DatabaseContext
         public DbSet<Category> Categories { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<EmployeeSalaryTb> EmployeeSalaryTbs { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
     }
 }
